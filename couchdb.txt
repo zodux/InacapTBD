@@ -28,3 +28,8 @@ db.save(doc4)
 
 doc5 = {'Type':'Lenguaje','Nombre':'C#','Creador':'Microsoft'}
 db.save(doc5)
+
+## Realizar consulta y módificación de una documento.
+doc['Nombre'] = {'Python'}
+doc = {'PYTHON'}
+db.save(doc)
