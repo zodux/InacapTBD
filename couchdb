@@ -1,0 +1,30 @@
+# Ejemplo de uso de couchDB desde Python 3.5+
+## Lo primero es instalar el modelo en python lo podemos hacer con la herramienta pip
+pip install couchdb
+
+## Luego desde python importamos el modulo.
+import couchdb
+
+## Ahora realizamos la conexión con el servidor de base de datos.
+couch = couchdb.Server()
+
+## Después creamos la base de datos o nos conectamos a una ya creada.
+db = couch.create('lenguajesYframeworks') #Creamos la Base de datos
+
+## Ya creada la base de datos podemoms crear documentos dentro de ella.
+doc = {'Type':'Lenguaje','Nombre':'Python','Creador':'Guido van Rossum'}
+
+## Ahora guardamos el documento en la base de datos y esto nos devolverá la versión y el id del documento.
+db.save(doc)
+
+doc2 = {'Type':'Framework','Nombre':'Django','Creador':'Adrian Holovaty'}
+db.save(doc2)
+
+doc3 = {'Type':'Lenguaje','Nombre':'Ruby','Creador':'Yukihiro "Matz" Matsumoto'}
+db.save(doc3)
+
+doc4 = {'Type':'Framework','Nombre':'Ruby on Rails', 'Creador':'David Heinemeier Hansson'}
+db.save(doc4)
+
+doc5 = {'Type':'Lenguaje','Nombre':'C#','Creador':'Microsoft'}
+db.save(doc5)
